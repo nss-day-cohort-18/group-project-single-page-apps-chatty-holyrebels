@@ -31,6 +31,7 @@ function createMessage(event) {
 		let message = input.value;
 		Chatty.unshiftMessage(message);
 		Chatty.printMessage(message);
+		event.currentTarget.value = "";
 	}
 }
 
@@ -69,3 +70,4 @@ function callDelete(event){
 		Chatty.deleteMessage(event);
 	}
 }
+

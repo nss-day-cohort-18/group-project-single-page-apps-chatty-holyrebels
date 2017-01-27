@@ -24,6 +24,7 @@ body.addEventListener('click', callDelete);
 
 
 ////// Function that creates the message
+
 function createMessage(event) {
 	console.log("createMessage works!");
 	if (event.keyCode === 13){
@@ -37,6 +38,7 @@ function createMessage(event) {
 function clearAll(event) {
 	console.log('clearAll wants to run');
 	output.innerHTML = "";
+	button.setAttribute("disabled", true);
 }
 
 ////// Function that toggles the background and text colors
@@ -67,7 +69,3 @@ function callDelete(event){
 		Chatty.deleteMessage(event);
 	}
 }
-
-
-
-

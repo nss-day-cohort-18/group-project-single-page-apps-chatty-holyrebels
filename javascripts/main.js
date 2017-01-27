@@ -1,5 +1,5 @@
 ////// Defines global variables
-let container = document.getElementById("wrapper");
+let container = document.getElementById("container");
 let input = document.getElementById('input');
 let button = document.getElementById('clear-all');
 let darkBox = document.getElementById('dark');
@@ -8,16 +8,16 @@ let output = document.getElementById('output');
 
 ////// Adds the event listeners to variables (objects)
 input.addEventListener('keypress', createMessage);
-button.addEventListener('checkBoxStateChange', clearAll);
-darkBox.addEventListener('checkBoxStateChange', darkMode);
-largeBox.addEventListener('checkBoxStateChange', largeMode);
+button.addEventListener('click', clearAll);
+darkBox.addEventListener('click', darkMode);
+largeBox.addEventListener('click', largeMode);
 
 //////////////////////// Main functions
 
 ////// Function that creates the message
 function createMessage(e) {
-	console.log('createMessage wants to run');
-	if (e.keycode === 13){
+	
+	if (e.keyCode === 13){
 		let message = input.value;
 		chatty.makeMessage(message);
 	}
@@ -33,7 +33,7 @@ function clearAll(e) {
 function darkMode(e) {
 	console.log('darkMode wants to run');
 	if(darkBox.hasAttribute('checked')){
-		container.classList.toggle('dark');   //////// NEED TO MAKE CSS CLASS
+		container.classList.add('dark');   //////// NEED TO MAKE CSS CLASS
 	}
 	else {
 		container.classList.toggle('dark')
@@ -44,10 +44,10 @@ function darkMode(e) {
 function largeMode(e) {
 	console.log('largeMode wants to run');
 	if (largeBox.hasAttribute('checked')) {
-		container.classList.toggle('large');
+		output.classList.add('large');
 	}
 	else {
-		container.classList.toggle('large');
+		output.classList.toggle('large');
 	}
 }
 

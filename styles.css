@@ -1,14 +1,15 @@
 /*     BASE STYLES      */
 
 body {
-	background-color: lightgray;
+	background-color: white;
 }
 
-#wrapper {
-	background-color: white;
+#container {
+/*	background-color: white;*/
 	width: 60%;
 	margin: 0 auto;
-	height: 45em;
+/*	height: 45em;*/
+	border: 1px black solid;
 }
 
 
@@ -71,5 +72,21 @@ h3 {
 	border: 1px black solid;
 	width: 80%;
 	margin: 0 auto;
+	overflow: scroll;
 }
 
+
+
+
+
+/*      TOGGLE     */
+
+.dark {
+	background-color: black;
+	color: white;
+}
+
+.large {
+	font-size: 1.3rem;
+	overflow: scroll;
+}

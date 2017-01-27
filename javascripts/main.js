@@ -16,7 +16,7 @@ largeBox.addEventListener('click', largeMode);
 
 ////// Function that creates the message
 function createMessage(e) {
-	
+
 	if (e.keyCode === 13){
 		let message = input.value;
 		chatty.makeMessage(message);
@@ -27,6 +27,7 @@ function createMessage(e) {
 function clearAll(e) {
 	console.log('clearAll wants to run');
 	output.innerHTML = "";
+	button.setAttribute("disabled", true);
 }
 
 ////// Function that toggles the background and text colors
@@ -58,7 +59,3 @@ function print(newMessage) {
 	messageDiv.innerHTML = message;
 	container.appendChild(messageDiv);
 }
- 
-
-
-

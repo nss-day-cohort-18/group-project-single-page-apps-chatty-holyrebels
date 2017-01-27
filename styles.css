@@ -1,0 +1,75 @@
+/*     BASE STYLES      */
+
+body {
+	background-color: lightgray;
+}
+
+#wrapper {
+	background-color: white;
+	width: 60%;
+	margin: 0 auto;
+	height: 45em;
+}
+
+
+
+
+/*    NAVBAR     */
+
+.navbar ul {
+	list-style-type: none;
+}
+
+.navbar li {
+	display: inline;
+}
+
+#logo {
+	height: 4em;
+	width: 3em;
+	margin: 0;
+}
+
+#input {
+	height: 2em;
+	margin: 0 2em;
+	width: 60%;
+}
+
+#clear-all {
+	height: 2em;
+}
+
+
+
+
+/*   CHECKBOXES   */
+
+#checkboxes ul {
+	list-style-type: none;
+	margin-left: 5em;
+}
+
+#checkboxes li {
+	display: inline;
+}
+
+
+
+
+/*    H3     */
+
+h3 {
+	margin-left: 3em;
+}
+
+
+/*    OUTPUT    */
+
+#output {
+	height:25em;
+	border: 1px black solid;
+	width: 80%;
+	margin: 0 auto;
+}
+

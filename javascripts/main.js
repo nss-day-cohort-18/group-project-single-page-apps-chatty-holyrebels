@@ -8,9 +8,9 @@ let output = document.getElementById('output');
 
 ////// Adds the event listeners to variables (objects)
 input.addEventListener('keypress', createMessage);
-button.addEventListener('click', clearAll);
-darkBox.addEventListener('click', darkMode);
-largeBox.addEventListener('click', largeMode);
+button.addEventListener('checkBoxStateChange', clearAll);
+darkBox.addEventListener('checkBoxStateChange', darkMode);
+largeBox.addEventListener('checkBoxStateChange', largeMode);
 
 //////////////////////// Main functions
 

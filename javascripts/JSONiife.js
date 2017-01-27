@@ -15,8 +15,8 @@ var Chatty = (function(otherChatty) {
 
 	/////// Prints the failed message
 	function loadFailed(load) {
-		console.log("data failed");
-		load.target.responseText;
+		console.log("data failed",
+		load.target.responseText);
 	}
 
 	/////// This will create the HTML elements and write the messages to them

@@ -22,10 +22,10 @@ var Chatty = (function(otherChatty) {
 	/////// This will create the HTML elements and write the messages to them
 	function showData (someData){
 		let prefill;
-		for (refill in someData){
-			let messages = "";
+		for (prefill in someData){
+			let prefillMessages = "";
 			let messageItem = someData[prefill];
-			messages += `<div class="message">
+			prefillMessages += `<div class="message">
 						 <p> ${messageItem.message}</p>
 						 <button class="delete">Delete</button>
 						 </div>`;

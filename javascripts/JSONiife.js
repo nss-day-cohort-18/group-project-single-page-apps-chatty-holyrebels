@@ -23,9 +23,9 @@ var Chatty = (function(otherChatty) {
 	function showData (someData){
 		let prefill;
 		for (prefill in someData){
-			let messages = "";
+			let prefillMessages = "";
 			let messageItem = someData[prefill];
-			messages += `<div class="message">
+			prefillMessages += `<div class="message">
 						 <p> ${messageItem.message}</p>
 						 <button class="delete">Delete</button>
 						 </div>`;

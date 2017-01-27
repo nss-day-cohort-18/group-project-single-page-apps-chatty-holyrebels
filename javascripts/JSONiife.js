@@ -26,9 +26,9 @@ var Chatty = (function(otherChatty) {
 			let prefillMessages = "";
 			let messageItem = someData[prefill];
 			prefillMessages += `<div class="message">
-						 <p> ${messageItem.message}</p>
-						 <button class="delete">Delete</button>
-						 </div>`;
+								 <p> ${messageItem.message}</p>
+								 <button class="delete">Delete</button>
+								 </div>`;
 			output.innerHTML += prefillMessages;
 		}
 	}

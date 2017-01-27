@@ -6,22 +6,28 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<img src="" id="logo">
-			<input type="textarea" id="input">
-			<button type="button" id="clear-all"></button>
-		</nav>
-	</header>
-	<section id="checkboxes">
-		<ul>
-			<li><input type="checkbox" id="dark"></li>
-			<li><input type="checkbox" id="large"></li>
-		</ul>
-	</section>
-	<h3></h3>
-	<section id="output">
-		
-	</section>
+	<div id="wrapper">
+		<header>
+			<nav class="navbar">
+				<ul>
+					<li><img src="images/mario.png" id="logo"></li>
+					<li><input type="textarea" id="input" placeholder="Enter message here"></li>
+					<li><button type="button" id="clear-all">Clear message board</button></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="checkboxes">
+			<ul>
+				<li><input type="checkbox" id="dark" class="dark">Dark theme</li>
+				<li><input type="checkbox" id="large" class="large">Large text</li>
+			</ul>
+		</div>
+		<h3>Messages: </h3>
+		<div id="output">
+
+		</div>
+	</div>
+	<script type="text/javascript" src="javascripts/JSONiife.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 </html>

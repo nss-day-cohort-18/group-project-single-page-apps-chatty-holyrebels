@@ -6,31 +6,41 @@ let darkBox = document.getElementById('dark');
 let largeBox = document.getElementById('large');
 let output = document.getElementById('output');
 
+////// This is the dynamic event handler
+let body = document.querySelector('body');
+
 ////// Adds the event listeners to variables (objects)
+
 input.addEventListener('keypress', createMessage);
 button.addEventListener('click', clearAll);
 darkBox.addEventListener('click', darkMode);
 largeBox.addEventListener('click', largeMode);
+body.addEventListener('click', callDelete);
 
 //////////////////////// Main functions
 
+
+
+
+
 ////// Function that creates the message
-function createMessage(e) {
-	
-	if (e.keyCode === 13){
+function createMessage(event) {
+	console.log("createMessage works!");
+	if (event.keyCode === 13){
 		let message = input.value;
-		chatty.makeMessage(message);
+		Chatty.unshiftMessage(message);
+		Chatty.printMessage(message);
 	}
 }
 
 ////// Function that clears the output box
-function clearAll(e) {
+function clearAll(event) {
 	console.log('clearAll wants to run');
 	output.innerHTML = "";
 }
 
 ////// Function that toggles the background and text colors
-function darkMode(e) {
+function darkMode(event) {
 	console.log('darkMode wants to run');
 	if(darkBox.hasAttribute('checked')){
 		container.classList.add('dark');   //////// NEED TO MAKE CSS CLASS
@@ -41,7 +51,7 @@ function darkMode(e) {
 }
 
 ////// Function that toggles the font size
-function largeMode(e) {
+function largeMode(event) {
 	console.log('largeMode wants to run');
 	if (largeBox.hasAttribute('checked')) {
 		output.classList.add('large');
@@ -51,14 +61,13 @@ function largeMode(e) {
 	}
 }
 
-////// Function that prints each chat message
-function print(newMessage) {
-	console.log('print wants to run');
-	let messageDiv = "";
-	messageDiv.innerHTML = message;
-	container.appendChild(messageDiv);
+////// Deletes message and private array
+function callDelete(event){
+	if (event.target.className === "delete"){
+		Chatty.deleteMessage(event);
+	}
 }
- 
+
 
 
 

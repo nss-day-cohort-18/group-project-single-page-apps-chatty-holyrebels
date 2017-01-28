@@ -3,11 +3,18 @@
 var Chatty = (function(otherChatty) {
 
 	otherChatty.removeItem = function(event) {
-		let messageBox = event.target.parentNode;
-		let textItem = messageBox.firstElementChild.innerText;
+
+		let textItem = event.target.previousElementSibling.innerHTML;
+		console.log('textItem:', textItem);
+		 
 		let newPrivateArray = Chatty.getPrivateArray();
-		let deleteTextIndex = newPrivateArray.indexOf(textItem);
-		let splicedArray = newPrivateArray.splice(deleteTextIndex, 1);
+		console.log('newPrivateArray:', newPrivateArray);
+		
+		let textItemIndex = newPrivateArray.indexOf(textItem);
+		console.log('deleteTextIndex:', textItemIndex);
+
+		newPrivateArray.splice(textItemIndex, 1);
+		console.log('newPrivateArray:', newPrivateArray);
 	}
 
 	return otherChatty;
@@ -25,9 +32,9 @@ var Chatty = (function(otherChatty) {
 //heres a run-down in the console:
 
 
-		console.log('messageBox:', messageBox)
-		console.log('textItem:', textItem)
-		console.log('newPrivateArray:', newPrivateArray)
-		console.log('deleteTextIndex:', deleteTextIndex)
-		console.log('splicedArray:', splicedArray);
-		console.log('newPrivateArray:', newPrivateArray)
+		
+		
+		
+		
+		
+		

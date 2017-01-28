@@ -18,7 +18,7 @@ var Chatty = (function(otherChatty) {
 						  <button class="delete">Delete</button>`;
 		messageDiv.innerHTML += newMessage;
 		// messageDiv.innerHTML = newMessage;
-		output.appendChild(messageDiv);
+		output.prepend(messageDiv);
 	}
 
 	/////// Deletes individual message

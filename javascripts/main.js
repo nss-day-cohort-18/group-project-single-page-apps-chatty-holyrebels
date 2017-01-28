@@ -26,7 +26,6 @@ body.addEventListener('click', callDelete);
 ////// Function that creates the message
 
 function createMessage(event) {
-	console.log("createMessage works!");
 	if (event.keyCode === 13){
 		let message = input.value;
 		Chatty.unshiftMessage(message);
@@ -68,6 +67,7 @@ function largeMode(event) {
 function callDelete(event){
 	if (event.target.className === "delete"){
 		Chatty.deleteMessage(event);
+		Chatty.removeItem(event);
 	}
 }
 

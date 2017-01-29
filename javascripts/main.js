@@ -31,6 +31,7 @@ function createMessage(event) {
 		Chatty.unshiftMessage(message);
 		Chatty.printMessage(message);
 		event.currentTarget.value = "";
+		button.removeAttribute("disabled");
 	}
 }
 
@@ -70,4 +71,3 @@ function callDelete(event){
 		Chatty.removeItem(event);
 	}
 }
-

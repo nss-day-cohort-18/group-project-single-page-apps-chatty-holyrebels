@@ -5,7 +5,11 @@ let button = document.getElementById('clear-all');
 let darkBox = document.getElementById('dark');
 let largeBox = document.getElementById('large');
 let output = document.getElementById('output');
-
+let Casey = document.getElementById('Casey');
+let James = document.getElementById('James');
+let Nick = document.getElementById('Nick');
+let Donald = document.getElementById('Donald');
+let user = "";
 ////// This is the dynamic event handler
 let body = document.querySelector('body');
 
@@ -17,17 +21,29 @@ darkBox.addEventListener('click', darkMode);
 largeBox.addEventListener('click', largeMode);
 body.addEventListener('click', callDelete);
 
+Casey.addEventListener('change', setUserName);
+James.addEventListener('change', setUserName);
+Nick.addEventListener('change', setUserName);
+Donald.addEventListener('change', setUserName);
+
 //////////////////////// Main functions
+ function setUserName (event) {
+ 	user = event.target.id;
+ 	console.log('user:', user);
+ 	input.focus();
+ 	input.select();
 
-
-
+ }
 
 
 ////// Function that creates the message
 
+
+
 function createMessage(event) {
 	
 	if (event.keyCode === 13){
+
 		if (input.value === "") {
 			alert('Enter text please!');
 		}
@@ -40,6 +56,7 @@ function createMessage(event) {
 			button.removeAttribute("disabled");
 		}
 	}	
+
 }
 
 ////// Function that clears the output box

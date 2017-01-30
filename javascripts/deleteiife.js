@@ -6,7 +6,7 @@ var Chatty = (function(otherChatty) {
 
 		let divId = click.target.parentNode.id; 
 		let copyArray = Chatty.getPrivateArray();
-		let index = copyArray.findIndex(element => element.timeStamp == divId);
+		let index = copyArray.findIndex(element => element.timeStamp == divId && user);
 		copyArray.splice(index, 1);
 	}
 

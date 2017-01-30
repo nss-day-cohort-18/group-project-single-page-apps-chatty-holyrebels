@@ -7,18 +7,24 @@ var Chatty = (function(otherChatty) {
 	var privateArray =[];
 
 	/////// This adds each message to the private array
-	otherChatty.unshiftMessage = function(message){
-		privateArray.unshift(message);
+	otherChatty.pushMessage = function(message, time){
+			let newMessage = {string: message, timeStamp: time};
+			privateArray.push(newMessage);
 	}
 
 	/////// This creates message and then add it to the output
-	otherChatty.printMessage = function(message){
+	otherChatty.printMessage = function(message, time){
+		
 		let messageDiv = document.createElement('div');
+
 		messageDiv.className = "singleMessage";
+
+		messageDiv.setAttribute("id", `${time}`);
+
 		let newMessage = `<p>${message}</p>
 						  <button class="delete">Delete</button>`;
+
 		messageDiv.innerHTML += newMessage;
-		// messageDiv.innerHTML = newMessage;
 		output.prepend(messageDiv);
 	}
 

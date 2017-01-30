@@ -26,10 +26,12 @@ body.addEventListener('click', callDelete);
 ////// Function that creates the message
 
 function createMessage(event) {
+	
 	if (event.keyCode === 13){
 		let message = input.value;
-		Chatty.unshiftMessage(message);
-		Chatty.printMessage(message);
+		let time = Date.now();
+		Chatty.pushMessage(message, time);
+		Chatty.printMessage(message, time);
 		event.currentTarget.value = "";
 		button.removeAttribute("disabled");
 	}
@@ -37,14 +39,13 @@ function createMessage(event) {
 
 ////// Function that clears the output box
 function clearAll(event) {
-	console.log('clearAll wants to run');
 	output.innerHTML = "";
 	button.setAttribute("disabled", true);
 }
 
 ////// Function that toggles the background and text colors
 function darkMode(event) {
-	console.log('darkMode wants to run');
+
 	if(darkBox.hasAttribute('checked')){
 		container.classList.add('dark');   //////// NEED TO MAKE CSS CLASS
 	}
@@ -55,7 +56,7 @@ function darkMode(event) {
 
 ////// Function that toggles the font size
 function largeMode(event) {
-	console.log('largeMode wants to run');
+
 	if (largeBox.hasAttribute('checked')) {
 		output.classList.add('large');
 	}
@@ -66,6 +67,7 @@ function largeMode(event) {
 
 ////// Deletes message and private array
 function callDelete(event){
+
 	if (event.target.className === "delete"){
 		Chatty.deleteMessage(event);
 		Chatty.removeItem(event);

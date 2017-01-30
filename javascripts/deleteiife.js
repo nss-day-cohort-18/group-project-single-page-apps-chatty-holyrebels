@@ -2,19 +2,12 @@
 
 var Chatty = (function(otherChatty) {
 
-	otherChatty.removeItem = function(event) {
+	otherChatty.removeItem = function(click) {
 
-		let textItem = event.target.previousElementSibling.innerHTML;
-		console.log('textItem:', textItem);
-		 
-		let newPrivateArray = Chatty.getPrivateArray();
-		console.log('newPrivateArray:', newPrivateArray);
-		
-		let textItemIndex = newPrivateArray.indexOf(textItem);
-		console.log('deleteTextIndex:', textItemIndex);
-
-		newPrivateArray.splice(textItemIndex, 1);
-		console.log('newPrivateArray:', newPrivateArray);
+		let divId = click.target.parentNode.id; 
+		let copyArray = Chatty.getPrivateArray();
+		let index = copyArray.findIndex(element => element.timeStamp == divId);
+		copyArray.splice(index, 1);
 	}
 
 	return otherChatty;
@@ -25,11 +18,11 @@ var Chatty = (function(otherChatty) {
 //the event is passed to the method (when called in the eventHandler) see main.js
 
 
-//we get the target (delete button), grab its parentNode (the message div),
-//and look inside it's first element child to read its inner text.
+//we get the target (delete button), grab its parentNode's id (timeStamp),
+//we get private array
+//find the index of that id
+//and splice it at the index of the id 
 
-//then we call getPrivateArray and splice it at the indexof the text we grabbed earlier
-//heres a run-down in the console:
 
 
 		

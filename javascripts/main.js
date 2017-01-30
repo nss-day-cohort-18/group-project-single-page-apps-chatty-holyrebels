@@ -43,13 +43,20 @@ Donald.addEventListener('change', setUserName);
 function createMessage(event) {
 	
 	if (event.keyCode === 13){
-		let message = input.value;
-		let time = Date.now();
-		Chatty.pushMessage(message, time, user);
-		Chatty.printMessage(message, time, user);
-		event.currentTarget.value = "";
-		button.removeAttribute("disabled");
-	}
+
+		if (input.value === "") {
+			alert('Enter text please!');
+		}
+		else {
+			let message = input.value;
+			let time = Date.now();
+			Chatty.pushMessage(message, time);
+			Chatty.printMessage(message, time);
+			event.currentTarget.value = "";
+			button.removeAttribute("disabled");
+		}
+	}	
+
 }
 
 ////// Function that clears the output box

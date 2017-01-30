@@ -14,6 +14,7 @@ var Chatty = (function(otherChatty) {
 	/////// This creates message and then add it to the output
 	otherChatty.printMessage = function(message){
 		let messageDiv = document.createElement('div');
+		messageDiv.className = "singleMessage";
 		let newMessage = `<p>${message}</p>
 						  <button class="delete">Delete</button>`;
 		messageDiv.innerHTML += newMessage;

@@ -112,6 +112,9 @@ h3 {
 	top:1px;
 }
 
+#clear-all:disabled {
+	background-color: gray;
+}
 
 
 
@@ -234,15 +237,15 @@ h3 {
 }
 
 .dark #output{
-	background-color: white;
+	background-color:black;
 /*	color:black;*/
 }
-
 
 .dark .message,
 .dark .singleMessage {
 	background-color: black;
 	color: white;
+	border: 1px white solid;
 }
 
 .large {

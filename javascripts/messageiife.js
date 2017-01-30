@@ -16,6 +16,9 @@ var Chatty = (function(otherChatty) {
 	otherChatty.printMessage = function(message, time){
 		
 		let messageDiv = document.createElement('div');
+
+		messageDiv.className = "singleMessage";
+
 		messageDiv.setAttribute("id", `${time}`);
 
 		let newMessage = `<p>${message}</p>

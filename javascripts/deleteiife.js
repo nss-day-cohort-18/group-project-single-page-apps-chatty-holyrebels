@@ -2,12 +2,20 @@
 
 var Chatty = (function(otherChatty) {
 
-	otherChatty.removeItem = function(click) {
+	otherChatty.removeItem = function(event) {
 
-		let divId = click.target.parentNode.id; 
+		let divId = event.target.parentNode.id; 
 		let copyArray = Chatty.getPrivateArray();
 		let index = copyArray.findIndex(element => element.timeStamp == divId && user);
 		copyArray.splice(index, 1);
+		console.log('copyArray:', copyArray);
+	}
+
+	otherChatty.removePreviousMessage = function(id) {
+		let copyArray = Chatty.getPrivateArray();
+		let index = copyArray.indexOf(id);
+		copyArray.splice(index, 1);
+		console.log('copyArray:', copyArray);
 	}
 
 	return otherChatty;

@@ -27,7 +27,7 @@ var Chatty = (function(otherChatty) {
 			let messageItem = someData[prefill];
 			prefillMessages += `<div class="message Donald">
 								<h4>${messageItem.donSays}</h4>
-								 <textarea class="input"> ${messageItem.message}</textarea>
+								 <textarea class="input" rows="4"> ${messageItem.message}</textarea>
 								 <button type="button" class="edit button">Edit</button>
 								 <button class="delete button">Delete</button>
 								 </div>`;

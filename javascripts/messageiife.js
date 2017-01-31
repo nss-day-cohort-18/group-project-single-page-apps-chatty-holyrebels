@@ -1,6 +1,6 @@
 "use strict";
 
-	
+
 var Chatty = (function(otherChatty) {
 
 	/////// Creates private array
@@ -15,14 +15,14 @@ var Chatty = (function(otherChatty) {
 
 	/////// This creates message and then add it to the output
 	otherChatty.printMessage = function(message, time, name){
-		
+
 		let messageDiv = document.createElement('div');
 		messageDiv.setAttribute("id", `${time}`);
 		messageDiv.className = "singleMessage";
 		messageDiv.classList.add(`${user}`);
 
 		let newMessage = `<h4>${user} Says: </h4>
-						  <textarea class="input">${message}</textarea>
+						  <textarea class="input" rows="4">${message}</textarea>
 						  <button type="button" class="edit button">Edit</button>
 						  <button type="button" class="delete button ">Delete</button>`;
 

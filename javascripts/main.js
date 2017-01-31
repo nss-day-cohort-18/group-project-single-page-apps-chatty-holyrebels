@@ -43,7 +43,7 @@ Donald.addEventListener('change', setUserName);
 
 
 function createMessage(event) {
-	
+
 	if (event.keyCode === 13){
 
 		if (event.target.classList.contains("input")) {
@@ -51,8 +51,8 @@ function createMessage(event) {
 					let time = Date.now();
 					Chatty.removePreviousMessage(previousMessageId);
 					Chatty.pushMessage(message, time);
-				} 
-				
+				}
+
 		 else if (input.value === "") {
 			alert('Enter text please!');
 
@@ -67,7 +67,7 @@ function createMessage(event) {
 			event.currentTarget.value = "";
 			button.removeAttribute("disabled");
 		}
-	}	
+	}
 
 }
 
@@ -81,9 +81,12 @@ function clearAll(event) {
 function darkMode(event) {
 
 	if(darkBox.hasAttribute('checked')) {
-		container.classList.add('dark');  
+		container.classList.add('dark');
+    document.querySelectorAll('textarea').forEach((textarea)=>textarea.classList.add('textareadark'));
 	} else {
 		container.classList.toggle('dark')
+    document.querySelectorAll('textarea').forEach((textarea)=>textarea.classList.toggle('textareadark'));
+
 	}
 }
 
@@ -92,8 +95,10 @@ function largeMode(event) {
 
 	if (largeBox.hasAttribute('checked')) {
 		output.classList.add('large');
+    document.querySelectorAll('textarea').forEach((textarea)=>textarea.classList.add('textarealarge'));
 	} else {
 		output.classList.toggle('large');
+    document.querySelectorAll('textarea').forEach((textarea)=>textarea.classList.toggle('textarealarge'));
 	}
 }
 
@@ -109,7 +114,7 @@ function editPost(event){
 		} else {
 			alert(`you're not ${event.target.parentElement.classList[1]}!`);
 		}
-	} 
+	}
 
 	if (event.target.classList.contains("edit")) {
 		if(event.target.parentElement.classList.contains(user)) {
@@ -118,7 +123,7 @@ function editPost(event){
 		textArea.focus();
 		previousMessageId = textArea.parentElement.id;
 		console.log('previousMessageId:', previousMessageId);
-		
+
 		} else{
 			alert(`you're not ${event.target.parentElement.classList[1]}!`);
 		}

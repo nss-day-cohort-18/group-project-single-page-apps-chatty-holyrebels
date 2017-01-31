@@ -35,7 +35,7 @@ h3 {
 
 .navbar ul {
 	list-style-type: none;
-	
+
 }
 
 .navbar li {
@@ -253,12 +253,23 @@ h3 {
 	overflow: scroll;
 }
 
-textarea { 
-    border-style: none; 
+textarea {
+    border-style: none;
     border-color: Transparent;
-    resize: none; 
-    overflow: auto;
-    width: 100%;
-    height: 100%;        
+    resize: none;
+    overflow: visible;
+    width: 75%;
+    height: 75%;
   }
 
+.textareadark {
+	background: #1e62d0;
+	color: white;
+}
+
+.textarealarge {
+	font-size: 1.2rem;
+	overflow: none;
+	width: 75%;
+	height: 75%;
+}

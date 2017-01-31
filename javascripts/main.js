@@ -12,6 +12,8 @@ let Donald = document.getElementById('Donald');
 let user = "";
 ////// This is the dynamic event handler
 let body = document.querySelector('body');
+let previousMessageId = "";
+let author = "";
 
 ////// Adds the event listeners to variables (objects)
 
@@ -19,7 +21,7 @@ input.addEventListener('keypress', createMessage);
 button.addEventListener('click', clearAll);
 darkBox.addEventListener('click', darkMode);
 largeBox.addEventListener('click', largeMode);
-body.addEventListener('click', callDelete);
+body.addEventListener('click', editPost);
 
 Casey.addEventListener('change', setUserName);
 James.addEventListener('change', setUserName);
@@ -44,10 +46,20 @@ function createMessage(event) {
 	
 	if (event.keyCode === 13){
 
-		if (input.value === "") {
+		if (event.target.classList.contains("input")) {
+					let message = event.target.value;
+					let time = Date.now();
+					Chatty.removePreviousMessage(previousMessageId);
+					Chatty.pushMessage(message, time);
+				} 
+				
+		 else if (input.value === "") {
 			alert('Enter text please!');
-		}
-		else {
+
+		} else if (user === "") {
+			alert("please select a user");
+
+		} else {
 			let message = input.value;
 			let time = Date.now();
 			Chatty.pushMessage(message, time);
@@ -68,10 +80,9 @@ function clearAll(event) {
 ////// Function that toggles the background and text colors
 function darkMode(event) {
 
-	if(darkBox.hasAttribute('checked')){
-		container.classList.add('dark');   //////// NEED TO MAKE CSS CLASS
-	}
-	else {
+	if(darkBox.hasAttribute('checked')) {
+		container.classList.add('dark');  
+	} else {
 		container.classList.toggle('dark')
 	}
 }
@@ -81,17 +92,35 @@ function largeMode(event) {
 
 	if (largeBox.hasAttribute('checked')) {
 		output.classList.add('large');
-	}
-	else {
+	} else {
 		output.classList.toggle('large');
 	}
 }
 
 ////// Deletes message and private array
-function callDelete(event){
+function editPost(event){
 
-	if (event.target.className === "delete"){
+	if (event.target.classList.contains("delete")){
+
+		if(event.target.parentElement.classList.contains(user)) {
 		Chatty.deleteMessage(event);
 		Chatty.removeItem(event);
+
+		} else {
+			alert(`you're not ${event.target.parentElement.classList[1]}!`);
+		}
+	} 
+
+	if (event.target.classList.contains("edit")) {
+		if(event.target.parentElement.classList.contains(user)) {
+		let textArea = event.target.previousElementSibling;
+		textArea.addEventListener("keypress", (event) => (event.keyCode === 13) ? createMessage(event) : null);
+		textArea.focus();
+		previousMessageId = textArea.parentElement.id;
+		console.log('previousMessageId:', previousMessageId);
+		
+		} else{
+			alert(`you're not ${event.target.parentElement.classList[1]}!`);
+		}
 	}
 }

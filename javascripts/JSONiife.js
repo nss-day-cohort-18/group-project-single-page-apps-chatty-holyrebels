@@ -25,10 +25,11 @@ var Chatty = (function(otherChatty) {
 		for (prefill in someData){
 			let prefillMessages = "";
 			let messageItem = someData[prefill];
-			prefillMessages += `<div class="message">
+			prefillMessages += `<div class="message Donald">
 								<h4>${messageItem.donSays}</h4>
-								 <p> ${messageItem.message}</p>
-								 <button class="delete">Delete</button>
+								 <textarea class="input"> ${messageItem.message}</textarea>
+								 <button type="button" class="edit button">Edit</button>
+								 <button class="delete button">Delete</button>
 								 </div>`;
 			output.innerHTML += prefillMessages;
 		}
